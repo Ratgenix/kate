@@ -1,6 +1,6 @@
 .def{
     text-align: center;
-   
+    font-family: Quicksand;
 }
 .about{
     text-align: center;
@@ -9,9 +9,9 @@
     margin-top: 5vh;
     padding-top: 5vw;
     padding-bottom: 5vw;
-    background-image: url(tulip2.jfif);
+   /* background-image: url(tulip2.jfif);*/
     background-position: bottom;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
 
 }
 .about-bg h1{

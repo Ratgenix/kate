@@ -14,7 +14,13 @@
 .ham{
     display: none;
 }
-
+.fake-nav{
+    font-family: Quicksand;
+}
+@font-face {
+    font-family: Quicksand;
+    src: url(../fonts/Quicksand.ttf);
+}
 
 @media only screen and (max-width: 600px) {
     .nav-list{
