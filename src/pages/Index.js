@@ -176,18 +176,19 @@ deleteObject(ref(store, newName)).then(() => {
 
     return (
         <div className='def'>
+             {currentUser&&<div>
             <h1 className='stick'>hi bb</h1>
             
             <progress value={progress} max="100"/>
             <br/>
 
-            {currentUser&&
+           
             <div>
                 <p>Logged in, upload a file.</p>
             <input onChange={handleChange} type='file'>
                 </input>
             <Button onClick={upload}>Upload</Button>
-            </div>}
+            </div></div>}
             <hr/>
             {/*files.map((file, index)=>
             <li key={index}>
