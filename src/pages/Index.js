@@ -50,6 +50,7 @@ const Index = () => {
         };
         loadImages();
     }, [loading]);
+    
     const handleChange = (event) => {
         //var test1=event.target.value.reverse().split('\\')[0].reverse()
         setname(event.target.files[0].name);
