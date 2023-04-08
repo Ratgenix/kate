@@ -1,3 +1,19 @@
+.nav-list{
+    display: block !important;
+}
+.fake-nav{
+    display: block !important;
+}
+.contact{
+    text-align: center;
+    margin-top: 20%;
+    font-family: Quicksand;
+}
+.thesis{
+    text-align: center;
+    margin-top: 20%;
+
+}
 .def{
     text-align: center;
     font-family: Quicksand;
@@ -51,6 +67,7 @@ text-align: center;
     font-family: Quicksand;
     src: url(../fonts/Quicksand.ttf);
 }
+
 .def hr{
     color:black;
     background-color: black;
@@ -64,25 +81,7 @@ li{
     text-decoration: none !important;
     list-style-type: none !important;
 }
-.fake-nav hr{
-    position: fixed;
-    width: 1px; height: 20vh; 
-    margin-left:7vw;
-    color:gray;
-    background-color: gray;
-    border-color: gray;
-    display: inline;
-    top:27.5vw;
-}
-.fake-nav a{
-    color:gray;
-    text-decoration: none;
-    transition: all .2s ease-in;
-}
-.fake-nav a:hover{
-    color:black;
-    transition: all .2s ease-in;
-}
+
 .img_p{
     display: inline;
     vertical-align: text-top;
@@ -227,7 +226,7 @@ text-align: center;
     
 }
 
-.fake-nav li{
+/* .fake-nav li{
     font-size:xx-large;
     cursor: pointer;
     color:gray;
@@ -240,7 +239,7 @@ text-align: center;
     color:black !important;
     transition: all .3s ease-in-out;
 
-}
+} */
 @media only screen and (max-width: 600px) {
 .zoom-back{
     position: fixed;

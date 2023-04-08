@@ -15,7 +15,42 @@
     display: none;
 }
 .fake-nav{
+    
+    margin-top:-10%;
     font-family: Quicksand;
+}
+.fake-nav hr{
+    position: fixed !important;
+    width: 1px !important; height: 33vh !important; 
+    margin-left:7vw !important;
+    color:gray;
+    background-color: gray;
+    border-color: gray;
+    display: inline !important;
+    margin-top:-18.5% !important;
+}
+.fake-nav a{
+    color:gray;
+    text-decoration: none;
+    transition: all .2s ease-in;
+}
+.fake-nav a:hover{
+    color:black;
+    transition: all .2s ease-in;
+}
+.fake-nav li{
+    font-size:xx-large;
+    cursor: pointer;
+    color:gray;
+
+}
+.fake-nav ul{
+    transition: all .3s ease-in-out;
+}
+.fake-nav ul:hover{
+    color:black !important;
+    transition: all .3s ease-in-out;
+
 }
 @font-face {
     font-family: Quicksand;

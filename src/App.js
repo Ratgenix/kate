@@ -2,9 +2,13 @@ import './App.css';
 import React,{useState} from 'react';
 import {Route, Routes} from 'react-router-dom'
 //pages
+
+import Splash from './pages/Splash'
 import Home from './pages/Index'
 import Oops from './pages/oops'
 import About from './pages/About'
+import Contact from './pages/Contact'
+import Thesis from './pages/Thesis'
 
 //components
 import Signin from './components/Signin.js'
@@ -42,12 +46,16 @@ function App() {
     <Nav toggle={toggle}/>
     <Sidebar isOpen={isOpen} toggle={toggle}/>
      <Routes>
-
-     <Route path='/' element={<Home/>}/>
+    {/* GENERICS */}
+     <Route path='/' element={<Splash/>}/>
      <Route path='/s' element={<Signin/>}/>
-     <Route path='/about' element={<About/>}/>
      <Route path='/*' element={<Oops/>}/>
 
+    {/* MAIN PAGES */}
+     <Route path='/gallery' element={<Home/>}/>
+     <Route path='/about' element={<About/>}/>
+     <Route path='/contact' element={<Contact/>}/>
+     <Route path='/thesis' element={<Thesis/>}/>
 
     </Routes>
 
