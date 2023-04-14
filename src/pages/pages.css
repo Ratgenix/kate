@@ -4,6 +4,22 @@
 .fake-nav{
     display: block !important;
 }
+.thesis{
+    text-align: center;
+    margin-top: 20%;
+    font-family: Quicksand;
+}
+.thesis a{
+    text-decoration: none;
+    color:black;
+    transition: all 1s ease-in-out; 
+}
+.thesis a:hover{
+    transform: scale(2) !important;
+    transition: all .4s ease-in-out; 
+    color:gray;
+    display: inline-block;
+}
 .contact{
     text-align: center;
     margin-top: 20%;
