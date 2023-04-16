@@ -49,7 +49,7 @@ a{
 .splash-def{
     background-color: #dfe0d3;
     z-index: 99;
-    padding-bottom:  10vh !important;
+    padding-bottom:  100vh !important;
 }
  
 @keyframes fadeInAnimation {
@@ -60,3 +60,18 @@ a{
         opacity: 1;
      }
 }
+
+@media only screen and (max-width: 600px) {
+    .splash-def{
+        background-color: #dfe0d3;
+        z-index: 101;
+        position: absolute;
+        padding-bottom:  10vh !important;
+       
+        /* padding-top:  10vh !important; */
+        margin-top:-2vh !important;
+        
+        overflow-y: hidden;
+    }
+    }
+    

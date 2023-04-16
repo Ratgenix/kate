@@ -256,13 +256,32 @@ text-align: center;
     transition: all .3s ease-in-out;
 
 } */
+.thesis Button{
+    display: none;
+}
 @media only screen and (max-width: 600px) {
 .zoom-back{
     position: fixed;
    top:10vw;
     padding-top:10vw;
 }
-.zoom-box{
-
+.contact{
+    margin-left:8%;
+    margin-top: 50%;
+}
+.thesis{
+    margin-left:5%;
+    margin-top: 50%;
+}
+.thesis Button{
+    
+    margin-top: 30%;
+    font-size: larger;
+    margin-left: 32%;
+    display: block;
+    color:white !important;
+    background-color: aquamarine;
+    border-radius: 4vw;
+    font-family: Quicksand;
 }
 }

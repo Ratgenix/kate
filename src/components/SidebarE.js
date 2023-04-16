@@ -23,7 +23,7 @@ top:${({isOpen}) => (isOpen ? '0':'-100%')};
 
 
 export const CloseIcon=styled(FaTimes)`
-color:cyan;
+color:red;
 
 `
 export const Icon=styled.div`
@@ -39,7 +39,7 @@ z-index:99999;
 
 
 export const SidebarWrapper=styled.div`
-color:yellow;
+color:yellow !important;
 `
 export const SidebarMenu=styled.ul`
 display:grid;
@@ -61,9 +61,10 @@ text-decoration:none;
 list-style:none;
 transition:0.2s ease-in-out;
 text-decoration:none;
-color:cyan;
+color:yellow !important;
+text-shadow: 1.5px 1.5px gray;
 cursor:pointer;
-margin-top:50vw; 
+margin-top:25vw; 
 &:hover{
     color:white;
     transition:0.2s ease-in-out;
