@@ -6,7 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: auto;
-  background-color: rgba(154, 158, 116, 0.308);
+  /* background-color: rgba(154, 158, 116, 0.308); */
+  background-color: white;
   overflow-x: hidden;
 }
 

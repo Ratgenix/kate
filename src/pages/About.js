@@ -115,18 +115,19 @@ function About() {
     return (
         <div className='about'>
             <div className='about-bg' style={divStyle}>
-            <h1>Kate Geer</h1>
+            <h1>About</h1>
             </div>
-            {currentUser&&
+            {/* {currentUser&&
             <div>
                 <p>Logged in, upload a file.</p>
             <input onChange={handleChange} type='file'>
                 </input>
             <Button onClick={upload}>Upload</Button>
-            </div>}
+            </div>} */}
            
-            {load &&<p>{desc}</p>}
+            <div className= 'desc'>{load &&<p>{desc}</p>}
             {!load && <p>loading...</p>}
+            </div>
            {currentUser &&<div className='text-butt'> <textarea className='edit-box' type='text' onChange={handleOnChange} value={description} />
             <Button onClick={createDesc}>Add desc</Button>
             </div>}

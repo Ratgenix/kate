@@ -26,10 +26,12 @@ const Sidebar = ({isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                <SidebarLink to='/gallery' onClick={toggle}>
+
+                <SidebarLink to='/gs' onClick={toggle}>
                     Home
                     </SidebarLink> 
-          <SidebarLink to='/about' onClick={toggle}>
+                
+                 <SidebarLink to='/about' onClick={toggle}>
                     About
                     </SidebarLink>
 
@@ -40,7 +42,6 @@ const Sidebar = ({isOpen, toggle}) => {
                     <SidebarLink to='/thesis' onClick={toggle}>
                         Thesis
                     </SidebarLink>
-
 
                     </SidebarMenu>
 

@@ -6,7 +6,7 @@ function Splash() {
   return (
     <div className='splash-def'>
         <h1 className='Kate'>Kate Geer</h1>
-        <Button><a href='/gallery'>Enter</a></Button>
+        <Button><a href='/gs'>Enter</a></Button>
         </div>
         
   )

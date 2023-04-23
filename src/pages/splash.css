@@ -15,6 +15,8 @@ Button{
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    font-family: Classy;
+    font-weight: bold;
     /* transform: scale(2) !important; */
 }
 Button a:hover{
@@ -22,6 +24,7 @@ Button a:hover{
     transition: all .4s ease-in-out; 
     color:aqua;
     display: inline-block;
+    
 }
 a{
     text-decoration: none;
@@ -47,7 +50,8 @@ a{
     animation-fill-mode: forwards;
 }
 .splash-def{
-    background-color: #dfe0d3;
+    /* background-color: #dfe0d3; */
+    background-color: white;
     z-index: 99;
     padding-bottom:  100vh !important;
 }
@@ -60,10 +64,30 @@ a{
         opacity: 1;
      }
 }
+.GalleryS{
+    text-align: center;
+    margin-top: 20%;
+    font-family: Quicksand;
+}
+.GalleryS h1{
+    font-family: Classy;
+    font-weight: 800;
+    font-size: 24pt;
+}
+.finalIMG{
+    margin-bottom: 5vw !important;
+}
+.GalleryS {
+    margin-top:20%;
 
+}
+.GalleryS a:hover{
+    color: rgb(26, 97, 90) !important;
+}
 @media only screen and (max-width: 600px) {
     .splash-def{
-        background-color: #dfe0d3;
+        /* background-color: #dfe0d3; */
+        background-color: white;
         z-index: 101;
         position: absolute;
         padding-bottom:  10vh !important;

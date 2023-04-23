@@ -6,14 +6,14 @@ import {Link as LinkR} from 'react-router-dom'
 export const SidebarContainer=styled.aside`
 position:fixed;
 z-index:999;
-
+overflow-y:hidden;
 width:50%;
 height:100%;
 background:black;
 display:grid;
 align-items:center;
 top:0;
-right:0;
+left:0;
 transition: 0.3s ease-in-out;
 opacity:${({isOpen}) => (isOpen ? '70%':'0')};
 top:${({isOpen}) => (isOpen ? '0':'-100%')};
@@ -24,7 +24,7 @@ top:${({isOpen}) => (isOpen ? '0':'-100%')};
 
 export const CloseIcon=styled(FaTimes)`
 color:red;
-
+left:0 !important;
 `
 export const Icon=styled.div`
 position:absolute;
@@ -62,7 +62,7 @@ list-style:none;
 transition:0.2s ease-in-out;
 text-decoration:none;
 color:yellow !important;
-text-shadow: 1.5px 1.5px gray;
+// text-shadow: 1.5px 1.5px gray;
 cursor:pointer;
 margin-top:25vw; 
 &:hover{
