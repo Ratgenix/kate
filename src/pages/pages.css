@@ -312,4 +312,16 @@ text-align: center;
     width: 100%!important;
     max-width: fit-content !important;
 }
+.about p {
+    font-size: 2vh;
+    font-family: Quicksand;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.desc {
+    display: block;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+    margin-top: -15% !important;
+}
 }

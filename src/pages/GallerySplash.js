@@ -10,7 +10,7 @@ function GallerySplash() {
         <h1> > <a href='/branding'>Branding Campagins</a></h1>
         <h1> > <a href='/ink'>Ink</a></h1>
         <h1> > <a href='/appD'>Application Design</a></h1>
-        <h1> > <a href='/misc'>misc.</a></h1>
+        <h1> > <a href='/misc'>Misc.</a></h1>
         </div>
   )
 }
