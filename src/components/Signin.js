@@ -5,14 +5,14 @@ import './comp.css'
 function Signin() {
     const emailRef=useRef()
     const passwordRef=useRef()
-    const {signin1, currentUser}=useAuth();
+    const {signin1, currentUser, logout}=useAuth();
     const [error,setError]=useState("")
     const [loading, setLoading]=useState(false)
 
     async function handleLogout(e){
         setError("")
         try{
-           // await logout()
+           await logout()
         }
         catch{
             setError("Failed to logout... what duh...")
@@ -61,9 +61,14 @@ function Signin() {
                         <Button 
                         disabled={loading}
                         type="submit">Login!</Button>
+
                         
                     </Form>
-                   
+
+                   <Button 
+                        disabled={loading}
+                        type="submit"
+                        onClick={handleLogout}>logout!</Button>
                 </Card.Body>
             </Card>
 

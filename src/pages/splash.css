@@ -38,6 +38,8 @@ a{
     /* left:43%; */
    position:relative;
    font-family: Classy;
+   overflow: hidden;
+   padding-bottom: 0px !important;
 }
 @font-face {
     font-family: Classy;
@@ -52,8 +54,11 @@ a{
 .splash-def{
     /* background-color: #dfe0d3; */
     background-color: white;
+    overflow: hidden;
     z-index: 99;
-    padding-bottom:  100vh !important;
+    padding-bottom: 20% !important;
+    margin-top: -5%;
+    padding-top: 10%;
 }
  
 @keyframes fadeInAnimation {
@@ -66,7 +71,7 @@ a{
 }
 .GalleryS{
     text-align: center;
-    margin-top: 20%;
+    margin-top: 13%;
     font-family: Quicksand;
 }
 .GalleryS h1{
@@ -77,10 +82,7 @@ a{
 .finalIMG{
     margin-bottom: 5vw !important;
 }
-.GalleryS {
-    margin-top:20%;
 
-}
 .GalleryS a:hover{
     color: rgb(26, 97, 90) !important;
 }
