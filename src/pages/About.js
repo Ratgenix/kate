@@ -117,20 +117,16 @@ function About() {
             <div className='about-bg' style={divStyle}>
             <h1>About</h1>
             </div>
-            {/* {currentUser&&
-            <div>
-                <p>Logged in, upload a file.</p>
-            <input onChange={handleChange} type='file'>
-                </input>
-            <Button onClick={upload}>Upload</Button>
-            </div>} */}
-           
-            <div className= 'desc'>{load &&<p>{desc}</p>}
+           <div className = 'desc'>
+            <p>Hello and welcome! My name is Kaitlyn Geer. A little about me: I was raised in Romeo/Washington Michigan, a quiet orchard district, where I graduated from Romeo High School in 2018. I am currently a student at Oakland University, located in Oakland County, Michigan. I've been attending for 3 years now, transferring after two years at Macomb Community College. At MCC I took many studio art classes, and at OU I've declared my bachelors degree in Graphic Design. In 2022, I was offered a job at Stellantis as a Creative Digital Modeler. Currently, that is what I am still working as. I would love to continue as a free lance artist, however. My portfolio shows capability in studio art like painting, sketching, drawing, charcoal portraits etc, as well as, my branding campaigns including my senior thesis. Reach out if you have comments, questions, concerns or requests! Thank you.
+</p>
+           </div>
+            {/* <div className= 'desc'>{load &&<p>{desc}</p>}
             {!load && <p>loading...</p>}
             </div>
            {currentUser &&<div className='text-butt'> <textarea className='edit-box' type='text' onChange={handleOnChange} value={description} />
             <Button onClick={createDesc}>Add desc</Button>
-            </div>}
+            </div>} */}
            
             
         </div>
