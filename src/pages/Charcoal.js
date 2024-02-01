@@ -87,7 +87,12 @@ const Charcoal = () => {
   }
 
   function Hi(props){
-      //console.log(props2, "prop2")
+      console.log(props.fName, "props fName")
+      let thisV
+      if (props.fName.includes('%20')){
+        thisV = props.fName.replace('%20',' ');
+        console.log( 'replaced, ',  thisV)
+      }
       let newVal=props.fName
       let ind=props.ind
       console.log(clicked)
@@ -153,7 +158,13 @@ const Charcoal = () => {
   }
 // Delete the file
 function delItem(imageName){
-let newName="char/"+imageName
+let newName1;
+
+newName1 = imageName.replace(/%20/g, ' ')
+console.log(newName1, 'imageName')
+
+let newName="char/"+newName1  //imageName
+
 deleteObject(ref(store, newName)).then(() => {
 setLoad(false)
 setPop(false)

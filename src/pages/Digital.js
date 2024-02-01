@@ -153,7 +153,13 @@ const Digital = () => {
   }
 // Delete the file
 function delItem(imageName){
-let newName="digi/"+imageName
+    let newName1;
+
+    newName1 = imageName.replace(/%20/g, ' ')
+    console.log(newName1, 'imageName')
+    
+    let newName="char/"+newName1  //imageName
+    
 deleteObject(ref(store, newName)).then(() => {
 setLoad(false)
 setPop(false)
