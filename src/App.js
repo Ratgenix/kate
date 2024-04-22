@@ -9,6 +9,7 @@ import Oops from './pages/oops'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Thesis from './pages/Thesis'
+import Car from './pages/Carousel'
 import GallerySplash from './pages/GallerySplash';
 //galleries
 import Paintings from './pages/Paintings'
@@ -42,11 +43,7 @@ function App() {
     
     <div className="site-wrapper" >
     <div className="head-comp">
-    {/*}
-    <Suspense fallback={<div>LOADING...</div>}>
-    <Navbar toggle={toggle}/>
-    </Suspense>
-  */}
+  <Nav toggle={toggle}/>
 
   
     </div>
@@ -56,7 +53,7 @@ function App() {
       <Sidebar isOpen={isOpen} toggle={toggle}/>
       </Suspense>
     */}
-    <Nav toggle={toggle}/>
+    {/* <Nav toggle={toggle}/> */}
     <Sidebar isOpen={isOpen} toggle={toggle}/>
      <Routes>
     {/* GENERICS */}
@@ -70,6 +67,7 @@ function App() {
      <Route path='/about' element={<About/>}/>
      <Route path='/contact' element={<Contact/>}/>
      <Route path='/thesis' element={<Thesis/>}/>
+     <Route path='/home' element={<Car/>}/>
 
     {/* GALLERY PAGES */}
     <Route path='/paintings' element={<Paintings/>}/>

@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react'
 import {Button} from 'react-bootstrap'
+import {db} from './Firebase.js'
 import './pages.css'
 import {store} from './Firebase.js'
 import { getStorage, ref, deleteObject, getMetadata } from "firebase/storage";
@@ -16,9 +17,11 @@ const Motion = () => {
   const [files, setFiles] = useState();
   const [pop, setPop]=useState(false)
   const [pop2, setPop2]=useState(false)
+  const [descPop, setDesc]=useState(false)
   var [clicked, SetClicked]=useState(0)
   var urls2=''
-
+  var descRef;
+  var [descriptions, setDescs] = useState({});
   //const fileInputRef=useRef();
 
   useEffect(() => {
@@ -29,12 +32,13 @@ const Motion = () => {
       
   }, []);
   useEffect(() => {
+    fetchDesc()
       window.scrollTo(0, 0)
     }, [])
 
   useEffect(() => {
       const fetchImages = async () => {
-        let result = await store.ref().child('moshin').listAll();
+        let result = await store.ref().child('motion').listAll();
         let urlPromises = result.items.map((imageRef) =>
           imageRef.getDownloadURL()
         );
@@ -62,34 +66,59 @@ const Motion = () => {
     
     function upload(){
       console.log('uploading...')
-      const uploadTask=store.ref(`moshin/${name}`).put(imgUp);
-      uploadTask.on(
-          "state_changed",
-          snapshot=>{
-              const progress=Math.round(
-                  (snapshot.bytesTransferred/snapshot.totalBytes)*100
-              )
-              setProg(progress);
-          },
-          error=>{
-              console.log(error)
-          },
-          ()=>{
-              store
-              .ref("moshin")
-              .child(name)
-              .getDownloadURL()
-              .then(url=>{
-                  console.log(url)
-              },setLoad(false) );
-          }
-      )
+      actDescBox()
+    //   const uploadTask=store.ref(`motion/${name}`).put(imgUp);
+    //   uploadTask.on(
+    //       "state_changed",
+    //       snapshot=>{
+    //           const progress=Math.round(
+    //               (snapshot.bytesTransferred/snapshot.totalBytes)*100
+    //           )
+    //           setProg(progress);
+    //       },
+    //       error=>{
+    //           console.log(error)
+    //       },
+    //       ()=>{
+    //           store
+    //           .ref("motion")
+    //           .child(name)
+    //           .getDownloadURL()
+    //           .then(url=>{
+    //               console.log(url)
+    //           },setLoad(false) );
+    //       }
+    //   )
+  }
+
+  function saveDesc(){
+    var desc = document.getElementById('desc').value;
+    setDesc(!descPop)
+    console.log(desc)
+
+    descRef = db.ref('motion/');
+    descRef.set({
+         desc
+    })
+    alert('Saved')
+  }
+  function fetchDesc(){
+    descRef = db.ref('/motion');
+    descRef.on("value", snapshot => {
+      const data = snapshot.val()
+      // console.log(data, 'data from db')
+      setDescs(data);
+      console.log(descriptions, 'data from db')
+      console.log(Object.keys(data), 'keys')
+      })
   }
 
   function Hi(props){
       //console.log(props2, "prop2")
-      let newVal=props.fName
+      // let newVal=props.fName
+      let newVal = props.fName.replace(/%20/g, ' ')
       let ind=props.ind
+      
       console.log(clicked)
       console.log(newVal, "index")
      return(props.trigger && clicked ===ind)?(
@@ -105,20 +134,35 @@ const Motion = () => {
   }
   function Zoom(props){
       //console.log(props2, "prop2")
-      
+      let newName1;
+
+      newName1 = props.fName.replace(/%20/g, ' ')
       let ind=props.ind
       console.log(clicked)
+      
       //console.log(newVal, "index")
      return(props.trigger && clicked ===ind)?(
       <div className='zoom-back' onClick={()=>setPop2(!pop2)}>
           
           <div className='zoom-box'>
-         <a href={props.fName2}> <img  title={props.fName.split('.')[0]} src={props.portF} height='auto'/></a>
+         <a href={props.fName2}> <img  title={newName1.split('.')[0]} src={props.portF} height='auto'/></a>
          <span> <Button onClick={()=>setPop2(!pop2)}>close</Button> </span>
           <p></p>
           </div>
           </div>
      ):"";
+  }
+
+  function DescBox(props){
+    console.log('clicked')
+    return(props.trigger )?(
+        <div className='delete-back' >
+            <div className='delete-box'>
+            <input placeholder="Description" type ="text" id="desc"/>
+            <span> <Button onClick={saveDesc}>close</Button> </span>
+            </div>
+            </div>
+       ):"";
   }
 
   function test1(idTag){
@@ -132,6 +176,11 @@ const Motion = () => {
       console.log(idTag)
       setPop2(!pop2)
   }
+  function actDescBox(){
+    SetClicked(3)
+    console.log('opening desc...')
+    setDesc(!descPop)
+  }
 
   var allImgs='';
   if(loading){
@@ -139,10 +188,12 @@ const Motion = () => {
       allImgs=
   files.map((file, index)=>
   <li key={index} >
+      {console.log(descriptions[file.split('%2F')[1].split('?')[0].split('.')[0].replace(/%20/g, ' ')], 'description') }
       <span className='img_p'><img onClick={()=>test2(index)} src={file} height='auto' width='250px'/>
       {currentUser && <p title='delete?'className='del' 
       onClick={()=>test1(index)}>X</p>}</span>
-      <h2>{file.split('%2F')[1].split('?')[0].split('.')[0]}</h2>
+      <h2>{file.split('%2F')[1].split('?')[0].split('.')[0].replace(/%20/g, ' ')}</h2>
+      <p>{descriptions[file.split('%2F')[1].split('?')[0].split('.')[0].replace(/%20/g, ' ')]}</p>
       <Hi ind={index} trigger={pop} fName={file.split('%2F')[1].split('?')[0]}/>
       <Zoom ind={index} trigger={pop2} portF={file} fName={file.split('%2F')[1].split('?')[0]} fName2={file}/>
   </li>
@@ -187,6 +238,7 @@ console.log("oops!", error)
           <input onChange={handleChange} type='file'>
               </input>
           <Button onClick={upload}>Upload</Button>
+          <DescBox trigger={descPop}/>
           </div></div>}
           <hr/>
           {/*files.map((file, index)=>
@@ -195,11 +247,12 @@ console.log("oops!", error)
           </li>)
           */}
           <div className='main-body'>
-          
+          <h1>Motion Graphic</h1>
           <div className='imgs-div'>{loading && allImgs}</div>
           </div>
           {console.log(files)}
       </div>
   )
 }
+
 export default Motion

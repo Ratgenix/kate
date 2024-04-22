@@ -20,13 +20,20 @@ const Nav = ({toggle}) => {
                 <div className='logo2' >
                 <a href='/gs'><img src={logo}/></a>
                 </div>
-                <li className='nav-list'>
+                <div className='navLinks'>
+                <h3><a href='/gs'>Home</a></h3>
+                <h3><a href='/about'>About</a></h3>
+                <h3><a href='/contact'>Contact</a></h3>
+                <h3><a href='/thesis'>Thesis</a></h3>
+                <h3><a href='/gs'>Gallery</a></h3>
+                </div>
+                {/* <li className='nav-list'>
                     <ul id='home'><a href='/gs'>Home</a></ul>
                     <ul id='about'><a href='/about'>About</a></ul>
                     <ul id='contact'><a href='/contact'>Contact</a></ul>
                     <ul id='thesis'><a href='/thesis'>Thesis</a></ul>
                
-                </li>
+                </li> */}
                 <hr/>
             </div>
         )

@@ -15,10 +15,23 @@
     display: none;
 }
 .fake-nav{
-    position:fixed;
-    margin-left:0%;
-    margin-top:-12.5%;
+    
+    position:absolute;
+    text-align: center !important;
+    margin-bottom: 20vw !important;
+    top:1px;
+    margin-left: 40.5% !important;
+    margin-right: auto !important;
+    /* margin-right:auto !important; */
+    /* margin-left:0%;
+    margin-top:-12.5%; */
     font-family: Quicksand;
+
+}
+.fake-nav h3{
+    color: black !important;
+    margin-right: 5%;
+    /* display: grid; */
 }
 .fake-nav hr{
     position: fixed !important;
@@ -27,7 +40,7 @@
     color:gray;
     background-color: gray;
     border-color: gray;
-    display: inline !important;
+    /* display: inline !important; */
     margin-top:-17.75% !important;
     display: none !important;
 }
@@ -54,21 +67,34 @@
     transition: all .3s ease-in-out;
 
 }
+.navLinks{
+    /* margin-left: 50vw;
+    margin-right: 5vw; */
+    justify-content: center !important;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    position: absolute !important;
+    color: black !important;
+    /* background-color:red !important; */
+}
+
 @font-face {
     font-family: Quicksand;
     src: url(../fonts/Quicksand.ttf);
 }
 
 .logo1{
-   position: sticky;
+   /* position: sticky; */
    display: block;
-   margin-top: -50%;
-   margin-bottom: 60%;
+   /* margin-top: -50%; */
+   /* margin-bottom: 60%; */
 }
 .logo1 img{
 
     width: 50%;
-    margin-left: 20%;
+    /* margin-left: 20%; */
     margin-right: auto;
     text-align: center;
     /* margin-top: -10%; */
@@ -113,7 +139,7 @@
         padding-right: 0vw;
         margin-left: auto;
         top:0;
-        position: sticky;
+        /* position: sticky; */
         padding-bottom:7vw;
        
         width:100%;

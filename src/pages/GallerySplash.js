@@ -3,6 +3,7 @@ import './splash.css'
 function GallerySplash() {
   return (
     <div className = 'GalleryS'>
+     
         <h1> > <a href='/paintings'>Paintings</a></h1>
         <h1> > <a href='/digital'>Digital</a></h1>
         <h1> > <a href='/charcoal'>Charcoal</a></h1>

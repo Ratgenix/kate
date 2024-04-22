@@ -73,6 +73,7 @@ a{
     text-align: center;
     margin-top: 13%;
     font-family: Quicksand;
+    z-index: 9999 !important;
 }
 .GalleryS h1{
     font-family: Classy;

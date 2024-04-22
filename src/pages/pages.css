@@ -251,33 +251,19 @@ text-align: center;
 .imgs-div img{
     cursor: pointer;
 }
-.fake-nav{
-   
 
-    text-align: center;
-    margin-left:3vw;
-    margin-right: auto;
-    overflow: visible;
-    position: fixed;
-    top:27vw;
-    height: 100%;
-    
+.control-dots{
+    display: none;
 }
-
-/* .fake-nav li{
-    font-size:xx-large;
-    cursor: pointer;
-    color:gray;
-
+.carousel-status{
+    display: none;
 }
-.fake-nav ul{
-    transition: all .3s ease-in-out;
+.Crsl{
+    width:50%;
+    margin:auto;
+    height:10%;
+    overflow-x: visible !important;
 }
-.fake-nav ul:hover{
-    color:black !important;
-    transition: all .3s ease-in-out;
-
-} */
 .thesis Button{
     display: none;
 }
